@@ -1,0 +1,67 @@
+1.) Load the data into a register memory
+
+2.) Process the data
+	- Do whatever the operation is
+
+3.) Write back teh result 
+	- Either in a register memory
+	- Or main memory
+
+Register Memory:
+	- Fastest memory a computer has
+	- Expensive piece of memory
+	- Cannot use it for RAM
+
+Memory Hierarchy
+	Level 1: Register memory 	-> 10xL1 cache memory cost (most expensive)
+	Level 2: L1 cache  			-> 10xL2 cache memory cost
+	Level 3: L2 Cache			-> 10xL3 cache memory cost
+	Level 4: L3 Cache			-> 10xRam cost per bit
+	Level 5: RAM				-> Fastest Memory(Factor of 1)
+
+Raspberry Pi Registers:
+	* R0, ...,  R11
+		- Safe to Use
+	* R112, R13, R14
+		-  Special use cases
+	* R15
+		- Used for a special purpose
+		- Used for "PC"
+		- "Program Counter"
+			-> Address wise tells where the memory is
+
+// Move a value(13) to Register 15
+mov R15, 13
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
