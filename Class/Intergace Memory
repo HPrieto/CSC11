@@ -1,0 +1,56 @@
+Interface Memory
+
+MAR: Memory Address Register
+MDR: Memory Data Register
+
+Control Unit
+
+	- orchestrates exevution of the program
+	- Instruction Register(IR) contains the current instruction
+
+Instruction Processing
+	A.) Fetch Instruction from Memory
+	B.) Decode Instruction
+	C.) Evaluate Address
+	D.) Fetch Operands from Memory
+	E.) Execute Operation
+	F.) Store Result
+	G.) Back to A
+						
+	Clock Cycle #1 -> Fetch -> Decode -> Eval. Address -> Fetch Operands -> Execute -> Store
+	CC1            -> FE    -> DE     -> EA            -> FE2            -> EX      -> ST
+
+	1 GZ -> 1Billion Clock Cycles per second
+
+	Pipelining
+	Clock Cycle #2 -> Fetch -> Decode -> Evaluate Address -> Fetch Operands -> Execute -> Store
+	cc2            -> FE    -> DE     -> EA               -> FE2            -> EX      -> Store
+
+	Clock Cycle #3 -> Fetch -> Decode -> Evaluate Address -> Fetch Operands -> Execute -> Store
+	cc3            -> FE    -> DE     -> EA               -> FE2            -> EX      -> Store
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
