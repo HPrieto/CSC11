@@ -37,7 +37,7 @@ void convert(char *cRep, int bits, int decimal, int base) {
     	remainder = decimal % base;
     	decimal /= base;
     	(remainder < 10) ? cRep[bits - index] = '0' + remainder:
-                       	   cRep[bits - index] = charRep(remainder);
+                       	 cRep[bits - index] = charRep(remainder);
     	index++;
   	}
 }
