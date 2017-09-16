@@ -8,42 +8,59 @@ void convert(char *,int,int,int);
 void blnkRep(char *,int);
 void destroy(char *);
 char charRep(int);
+int  inptDcm();
+int  inptBse();
 
 int main() {
 	//Declare program variables
-	int  bits  = 8, decimal, base;
+	int  bits  = 8, decimal = inptDcm(), base = inptBse();
 	char *cRep = new char[bits];
-	//Scan User Input
-	printf("Enter a number:");
-	scanf("%i", &decimal);
-	printf("Enter your desired base: ");
-	scanf("%i", &base);
 	//Perform Conversion
 	convert(cRep, bits,  decimal, base);
-	//Output representations to user
+	//Output representation to user
 	printf("String Representation: %s \n", cRep);
 	//Free Memory
 	destroy(cRep);
 }
 
-/* Converts int decimal value to specified base representation */
+/* Prompt user for decimal value and return */
+int inptDcm() {
+  //Method variables
+  int decimal;
+  //Scan User Input
+  printf("Enter a number:");
+  scanf("%i", &decimal);
+  return decimal;
+}
+
+/* Prompt user for value base and return */
+int inptBse() {
+  //Method variables
+  int base;
+  //Scan User Input
+  printf("Enter your desired base: ");
+  scanf("%i", &base);
+  return base;
+}
+
+/* Converts decimal value to specified base representation */
 void convert(char *cRep, int bits, int decimal, int base) {
-	//Conversion Variables
+	  //Conversion Variables
   	int index = 1, remainder;
-  	//Set binary/octal/hex string representation to 0's
+  	//Set string representation to 0's
   	blnkRep(cRep,bits);
   	//Perform division algorithm
   	while (decimal != 0) {
     	remainder = decimal % base;
-    	decimal /= base;
     	(remainder < 10) ? cRep[bits - index] = '0' + remainder:
-                       	 cRep[bits - index] = charRep(remainder);
+                         cRep[bits - index] = charRep(remainder);
+      decimal /= base;
     	index++;
   	}
 }
 
 /* Sets character representation to all zeros */
-void blnkRep(char *cRep,int bits) {
+void blnkRep(char *cRep, int bits) {
   	for (int i = 0; i < bits; i++)
     	cRep[i] = '0';
   	cRep[bits] = '\0';
