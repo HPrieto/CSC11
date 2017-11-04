@@ -48,4 +48,3 @@ main:
         str r2, [r0]       	// store z[127:96] at dereferenced pointer [r0]
 halt:
 	pop {pc}
-
